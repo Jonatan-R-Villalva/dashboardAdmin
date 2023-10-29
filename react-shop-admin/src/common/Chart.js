@@ -3,23 +3,23 @@ import { Bar } from 'react-chartjs-2';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-export default const Chart = ({ chartData }){
-    return(
-        <>
-            <Bar
-            data={chartData}
-            options={{
-                title: {
-                    display: true,
-                    text: 'Category',
-                    fontsize: 20 
-                },
-                legend: {
-                    display: true,
-                    position: 'right'
-                }
-            }}
-            />
-        </>
-    )
-}
+export const Chart = ({ chartData }) => {
+  return (
+    <>
+      <Bar
+        data={chartData}
+        options={{
+          title: {
+            display: true,
+            text: 'Category',
+            fontsize: 20,
+          },
+          legend: {
+            display: true,
+            position: 'right',
+          },
+        }}
+      />
+    </>
+  );
+};
