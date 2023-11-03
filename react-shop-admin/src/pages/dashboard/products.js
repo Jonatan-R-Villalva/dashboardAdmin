@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { CheckIcon } from '@heroicons/react/20/solid';
 import Modal from '@common/Modal';
+import FormProduct from '@components/FormProduct';
 
 export default function products() {
   const [open, setOpen] = useState(false);
@@ -90,7 +91,7 @@ export default function products() {
         </div>
       </div>
       <Modal open={open} setOpen={setOpen}>
-        <h1>Hola mundo</h1>
+        <FormProduct />
       </Modal>
     </>
   );
