@@ -1,17 +1,21 @@
 import { useRef } from 'react';
+import { addProduct } from '@services/api/products';
 
 export default function FormProduct() {
   const formRef = useRef(null);
   const hadleSubmit = (e) => {
     e.preventDefault();
-  };
-  const formData = new formData(formRef.current);
-  const data = {
-    title: formData.get('title'),
-    price: parseInt(formData.get('price')),
-    description: formData.get('description'),
-    categoryId: parseInt(formData.get('category')),
-    images: [formData.get('images').name],
+    const formData = new FormData(formRef.current);
+    const data = {
+      title: formData.get('title'),
+      price: parseInt(formData.get('price')),
+      description: formData.get('description'),
+      categoryId: parseInt(formData.get('category')),
+      images: [formData.get('images').name],
+    };
+    addProduct(data).then((response) => {
+      console.log(response);
+    });
   };
   return (
     <form ref={formRef} onSubmit={hadleSubmit}>
